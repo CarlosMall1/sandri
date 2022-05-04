@@ -3,6 +3,5 @@ build:
     context: api
   frontend:
     context: frontend
-deploy:
     dockerfile: Dockerfile
     target: dev
